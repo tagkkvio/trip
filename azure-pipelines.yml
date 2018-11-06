@@ -12,6 +12,8 @@ variables:
 steps:
 - script: 
   dotnet build --configuration $(buildConfiguration)
+  
+- script:
   dotnet publish --output $(Build.ArtifactStagingDirectory)
 
 - task: PublishBuildArtifacts@1
