@@ -14,4 +14,7 @@ steps:
 - script: dotnet publish ".\WebApplication1.sln" --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)
 
 - task: PublishBuildArtifacts@1 
-
+  inputs:
+    command: publish
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: True
